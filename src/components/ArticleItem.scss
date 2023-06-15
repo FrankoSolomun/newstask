@@ -4,13 +4,15 @@
   height: 250px;
   border-radius: 24px;
   overflow: hidden;
-  /* Add this line to make items display inline */
   cursor: pointer;
   position: relative;
   margin-bottom: 20px;
   margin-top: 0px;
-  
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
 
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -21,32 +23,35 @@
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   }
 
-  h4 {
-    color: dodgerblue;
-    font-size: 10px;
-    font-family: 'Inter', sans-serif;
-    margin: 10px 20px 3px 20px;
-    pointer-events: none;
-    font-weight: bold;
+  .article-text {
 
-  }
 
-  h3 {
-    color: #333;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Inter', sans-serif;
-    /* Use font-weight property instead of font property */
-    margin: 0px 20px 31px 20px;
-    pointer-events: none;
-    height: 30px;
+    h4 {
+      color: dodgerblue;
+      font-size: 10px;
+      font-family: 'Inter', sans-serif;
+      margin: 10px 20px 3px 20px;
+      pointer-events: none;
+      font-weight: bold;
+
+    }
+
+    h3 {
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Inter', sans-serif;
+      margin: 0px 20px 31px 20px;
+      pointer-events: none;
+      height: 30px;
+    }
   }
 
   p {
     color: #777;
     font-size: 12px;
-    margin: 0 20px 10px 20px;
-    // pointer-events: none;
+    margin: 0 20px 15px 20px;
+    pointer-events: none;
     font-family: 'Inter', sans-serif;
   }
 
@@ -80,7 +85,7 @@
   .remove {
     position: absolute;
     top: 10px;
-    right: 10px;    
+    right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,12 +115,17 @@
 
 
 @media (max-width: 1200px) {
-  .article-item{
+  .article-item {
     padding-left: 0px;
     margin-top: 0px;
     padding-top: 0px;
     width: 343px;
     height: 260px;
+
+    p{
+      display: none;
+    }
+
     img {
       width: 100%;
       pointer-events: none;
@@ -126,27 +136,30 @@
     .remove {
       position: absolute;
       top: 10px;
-      right: 10px;    
+      right: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: transparent;
       border: none;
-  
+
       svg {
         stroke: #000;
         fill: none;
         width: 36px;
-      }}
-      .favorite {
-        position: absolute;
-        top: 5px;
-        right: 20px;
-        width: 36px;
-    
-        svg {
-          stroke: none;
-        }}
+      }
+    }
+
+    .favorite {
+      position: absolute;
+      top: 5px;
+      right: 20px;
+      width: 36px;
+
+      svg {
+        stroke: none;
+      }
+    }
   }
 
 }

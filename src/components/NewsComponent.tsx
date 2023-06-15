@@ -11,12 +11,11 @@ import MenuPhone from './MenuPhone';
 
 
 const API_URL = 'https://newsapi.org/v2/everything';
-const API_KEY = process.env.REACT_APP_NEWS_API_KEY; // Replace with your actual API key
+const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 
 type Article = {
   title: string;
   description: string;
-  // Add more properties as needed
 };
 type Props = {
   source: string;
@@ -27,7 +26,7 @@ const NewsComponent: React.FC<Props> = (props) => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [page, setPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const { source } = props; // Access the source prop
+  const { source } = props; 
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
   const [latestNews, setLatestNews] = useState<Article[]>([]);
   const [showDifferentNews, setShowDifferentNews] = useState(true);
@@ -77,7 +76,6 @@ const NewsComponent: React.FC<Props> = (props) => {
           pageSize: 10,
           page,
           sources: source,
-          // Add any additional query parameters as needed
         },
       });
       setArticles((prevArticles) => [...prevArticles, ...response.data.articles]);

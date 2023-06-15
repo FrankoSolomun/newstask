@@ -81,87 +81,99 @@ const Favourites: React.FC = () => {
 
           <ul className='main-box2'>
             {hasFavorites ? (
-            <>
-              <ul className='main-box2'>
-                {(() => {
-                  const reversedFavorites = [...displayData].reverse();
-                  const listItems = [];
-                  for (let i = 0; i < reversedFavorites.length; i++) {
-                    const article = reversedFavorites[i];
-                    listItems.push(
-                      <li className='article-item' key={i}>
-                      <img src={article.imageUrl} alt={article.title} />
-                      <h4>{article.category}</h4>
-                      <h3>{truncateText(article.title, 60)}</h3>
-                      <p>{article.author}</p>
-                      <button className='remove' onClick={() => removeFavorite(article.title)}>
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
-                          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                          <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-                          <g id="SVGRepo_iconCarrier">
-                            <path d="M16 8L8 16M8.00001 8L16 16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                          </g>
-                        </svg>
-                      </button>
-                    </li>
-                    );
-                  }
-                  return listItems;
-                })()}
-              </ul>
-            </>
-          ) : (
-            <div className='no-articles'>
-              <h3>You haven't saved any articles!</h3>
-            </div>
-          )}
+              <>
+                <ul className='main-box2'>
+                  {(() => {
+                    const reversedFavorites = [...displayData].reverse();
+                    const listItems = [];
+                    for (let i = 0; i < reversedFavorites.length; i++) {
+                      const article = reversedFavorites[i];
+                      listItems.push(
+                        <li className='article-item' key={i}>
+                           {article.imageUrl ? (
+                            <img src={article.imageUrl} alt={article.title} />
+                          ) : (
+                            <img src="noimage.jpg" alt="No Image" />
+                          )}
+                          <div className='article-text'>
+                            <h4>{article.category}</h4>
+                            <h3>{truncateText(article.title, 60)}</h3>
+                          </div>
+                          <p>{article.author}</p>
+                          <button className='remove' onClick={() => removeFavorite(article.title)}>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
+                              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                              <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                              <g id="SVGRepo_iconCarrier">
+                                <path d="M16 8L8 16M8.00001 8L16 16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </g>
+                            </svg>
+                          </button>
+                        </li>
+                      );
+                    }
+                    return listItems;
+                  })()}
+                </ul>
+              </>
+            ) : (
+              <div className='no-articles'>
+                <h3>You haven't saved any articles!</h3>
+              </div>
+            )}
           </ul>
         </div>
 
       </div>
       <div className="main">
-      <div className='category'>
-        <SideMenu />
-        <div>
-          {hasFavorites ? (
-            <>
-              <h2>Favorites</h2>
-              <ul className='main-box2'>
-                {(() => {
-                  const reversedFavorites = [...displayData].reverse();
-                  const listItems = [];
-                  for (let i = 0; i < reversedFavorites.length; i++) {
-                    const article = reversedFavorites[i];
-                    listItems.push(
-                      <li className='article-item' key={i}>
-                      <img src={article.imageUrl} alt={article.title} />
-                      <h4>{article.category}</h4>
-                      <h3>{truncateText(article.title, 60)}</h3>
-                      <p>{article.author}</p>
-                      <button className='remove' onClick={() => removeFavorite(article.title)}>
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
-                          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                          <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-                          <g id="SVGRepo_iconCarrier">
-                            <path d="M16 8L8 16M8.00001 8L16 16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                          </g>
-                        </svg>
-                      </button>
-                    </li>
-                    );
-                  }
-                  return listItems;
-                })()}
-              </ul>
-            </>
-          ) : (
-            <div className='no-articles'>
-              <h2>Favorites</h2>
-              <h3>You haven't saved any articles!</h3>
-            </div>
-          )}
+        <div className='category'>
+          <SideMenu />
+          <div>
+            {hasFavorites ? (
+              <>
+                <h2>Favorites</h2>
+                <ul className='main-box2'>
+                  {(() => {
+                    const reversedFavorites = [...displayData].reverse();
+                    const listItems = [];
+                    for (let i = 0; i < reversedFavorites.length; i++) {
+                      const article = reversedFavorites[i];
+                      listItems.push(
+                        <li className='article-item' key={i}>
+                          {article.imageUrl ? (
+                            <img src={article.imageUrl} alt={article.title} />
+                          ) : (
+                            <img src="noimage.jpg" alt="No Image" />
+                          )}
+                          <div className='article-text'>
+                            <h4>{article.category}</h4>
+                            <h3>{truncateText(article.title, 60)}</h3>
+                          </div>
+                          <p>{article.author}</p>
+                          <button className='remove' onClick={() => removeFavorite(article.title)}>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
+                              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                              <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                              <g id="SVGRepo_iconCarrier">
+                                <path d="M16 8L8 16M8.00001 8L16 16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </g>
+                            </svg>
+                          </button>
+                        </li>
+                      );
+                    }
+                    return listItems;
+                  })()}
+                </ul>
+              </>
+            ) : (
+              <div className='no-articles'>
+                <h2>Favorites</h2>
+                <h3>You haven't saved any articles!</h3>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

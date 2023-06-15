@@ -10,7 +10,6 @@ interface FavoriteArticle {
   imageUrl: string;
   author: string;
   category: string;
-  // Add other properties as needed
 }
 
 const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
@@ -83,16 +82,22 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
         return 'SPORT';
       }
     }
-    return ''; // Default category or no categories on non-home pages
+    return '';
   };
-  
+
   const category = getCategory();
 
   return (
     <li className="article-item">
-      <img src={article.urlToImage} alt={article.title} />
-      <h4>{category}</h4>
-      <h3>{truncateText(article.title, 60)}</h3>
+      {article.urlToImage ? (
+        <img src={article.urlToImage} alt={article.title} />
+      ) : (
+        <img src="noimage.jpg" alt="No Image" />
+      )}      
+      <div className='article-text'>
+        <h4>{category}</h4>
+        <h3>{truncateText(article.title, 60)}</h3>
+      </div>
       {/* <p>{truncateText(article.description || '', 80)}</p> */}
       <p>{article.author}</p>
       <div

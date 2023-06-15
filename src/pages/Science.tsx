@@ -3,7 +3,7 @@ import NewsComponent from '../components/NewsComponent';
 import Recommendation from '../components/Recommendation';
 
 const GeneralPage = () => {
-  const source = 'next-big-future';
+  const source = 'national-geographic';
 
   return (
     <div>

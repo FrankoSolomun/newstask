@@ -9,7 +9,6 @@ interface FavoriteArticle {
   title: string;
   description: string;
   imageUrl: string;
-  // Add other properties as needed
 }
 
 const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
