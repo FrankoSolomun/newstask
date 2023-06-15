@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ArticleItem.scss';
+import { Link } from 'react-router-dom';
 
 export type ArticleItemProps = {
   article: any;
@@ -10,6 +11,7 @@ interface FavoriteArticle {
   imageUrl: string;
   author: string;
   category: string;
+  url: string;
 }
 
 const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
@@ -46,6 +48,7 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
         imageUrl: article.urlToImage,
         author: article.author,
         category: category,
+        url: article.url,
       };
       favorites.push(favoriteArticle);
     }
@@ -94,12 +97,13 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
       ) : (
         <img src="noimage.jpg" alt="No Image" />
       )}      
-      <div className='article-text'>
-        <h4>{category}</h4>
-        <h3>{truncateText(article.title, 60)}</h3>
-      </div>
-      {/* <p>{truncateText(article.description || '', 80)}</p> */}
-      <p>{article.author}</p>
+      <Link to={article.url} className="article-link">
+        <div className='article-text'>
+          <h4>{category}</h4>
+          <h3>{truncateText(article.title, 60)}</h3>
+        </div>
+        <p>{article.author}</p>
+      </Link>
       <div
         className={`favorite ${isFavorite ? 'favorite-active' : ''}`}
         onClick={handleFavoriteClick}

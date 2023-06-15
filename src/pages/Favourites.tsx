@@ -8,6 +8,7 @@ import MenuPhone from '../components/MenuPhone';
 import ArticleItem from '../components/ArticleItem';
 import '../components/MenuPhone.scss'
 import '../components/NewsComponent.scss'
+import { Link } from 'react-router-dom';
 
 
 interface Article {
@@ -16,6 +17,7 @@ interface Article {
   imageUrl: string;
   author: string;
   category: string;
+  url: string;
 }
 
 const Favourites: React.FC = () => {
@@ -95,11 +97,13 @@ const Favourites: React.FC = () => {
                           ) : (
                             <img src="noimage.jpg" alt="No Image" />
                           )}
-                          <div className='article-text'>
-                            <h4>{article.category}</h4>
-                            <h3>{truncateText(article.title, 60)}</h3>
-                          </div>
-                          <p>{article.author}</p>
+                          <Link to={article.url} className="article-link">
+        <div className='article-text'>
+          <h4>{article.category}</h4>
+          <h3>{truncateText(article.title, 60)}</h3>
+        </div>
+        <p>{article.author}</p>
+      </Link>
                           <button className='remove' onClick={() => removeFavorite(article.title)}>
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
                               <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -145,11 +149,13 @@ const Favourites: React.FC = () => {
                           ) : (
                             <img src="noimage.jpg" alt="No Image" />
                           )}
-                          <div className='article-text'>
-                            <h4>{article.category}</h4>
-                            <h3>{truncateText(article.title, 60)}</h3>
-                          </div>
-                          <p>{article.author}</p>
+                          <Link to={article.url} className="article-link">
+        <div className='article-text'>
+          <h4>{article.category}</h4>
+          <h3>{truncateText(article.title, 60)}</h3>
+        </div>
+        <p>{article.author}</p>
+      </Link>
                           <button className='remove' onClick={() => removeFavorite(article.title)}>
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
                               <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>

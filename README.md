@@ -9,3 +9,7 @@ The LatestNews component displays a list of the latest articles fetched from the
 The SideMenu and MenuPhone components provide navigation and category options for the user to choose from.
 
 The favorites page in the application allows users to view and manage their collection of favorite articles. By storing the favorites in local storage, the user's preferences are preserved even if they navigate away from the page or close the browser, enhancing the overall user experience. This approach offers persistence across page refreshes or even when the user closes and reopens the application. Additionally, using local storage avoids the need for complex state management solutions and simplifies the implementation of the favorites feature. This ensures that users can easily maintain and access their favorite articles without any hassle.
+
+
+If you're downloading the project, you need to create a .env file in the root directory and add your API key which you can get from https://newsapi.org/.
+
