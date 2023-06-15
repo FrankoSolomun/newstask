@@ -1,0 +1,152 @@
+.menu {
+  h1 {
+    font-size: 32px;
+    font-weight: 900;
+    margin: 0 0 20px 0;
+
+    span {
+      color: #BB1E1E;
+    }
+
+  }
+
+  svg {
+    display: none;
+  }
+
+  &.active {
+    .dropmenu {
+      display: none;
+    }
+}}
+
+
+@media (max-width: 1200px) {
+
+  .menu {
+    width: 90%;
+    padding: 0 0px 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      margin-bottom: 0;
+      font-size: 24px;
+
+      span {
+        color: #BB1E1E;
+      }
+    }
+
+    svg {
+      display: block;
+      width: 24px;
+    }
+  }
+}
+
+.dropmenu{
+  display: none;
+}
+
+@media(max-width: 1200px){
+.dropmenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f5f5;
+  z-index: 100;
+  
+  &.active {
+    display: none;
+  }
+
+  .close {
+    position: absolute;
+    top: 25px;
+    right: 23px;
+  }
+
+  h1 {
+    margin-bottom: 0;
+    font-size: 32px;
+    margin-bottom: 60px;
+
+    span {
+      color: #BB1E1E;
+    }
+  }
+
+  .search {
+    width: 90%;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .container {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding-left: 0px;
+    margin-top: 0px;
+    grid-column: span 3;
+    grid-column: 3;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0px 20px;
+    margin: 0 0 0 0;
+    height: 300px;
+    width: 90%;
+
+    .button {
+      width: 95px;
+      height: 95px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 5px 0 5px 0 !important;
+      cursor: pointer;
+      border-radius: 10%;
+      color: #1D1D1B;
+      opacity: 50%;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+
+      svg {
+        width: 24px !important;
+        height: 24px !important;
+      }
+
+      &:hover {
+        background-color: white;
+        color: #BB1E1E;
+        fill: #BB1E1E;
+        stroke: #BB1E1E;
+        opacity: 100%;
+      }
+    }
+
+    .active {
+      background-color: white;
+      color: #BB1E1E;
+      opacity: 100%;
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    }
+  }
+}}

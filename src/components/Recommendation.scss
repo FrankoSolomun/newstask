@@ -1,0 +1,81 @@
+.recommend{
+
+    background-color: #BB1E1E    ;
+    max-width: 1080px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .text{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    
+
+    .bold-text{
+        font-weight: bold;
+        font-size: 16px;
+        color: #fff;
+        margin: 10px;
+    }
+
+    .norm-text{
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        margin: 10px;
+    }
+
+    .white-button{
+        background-color: #fff;
+        border: none;
+        border-radius: 5px;
+        width: 70px;
+        height: 40px;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: 'Inter', sans-serif;
+
+    }
+
+    .second-button{
+        background-color: transparent;
+        border: none;
+        border-radius: 5px;
+        width: 90px;
+        height: 40px;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        font-family: 'Inter', sans-serif;
+
+    }
+
+    .buttons{
+        display: flex  ;
+        justify-content: center;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .recommend {
+        display: none;
+    }
+  }

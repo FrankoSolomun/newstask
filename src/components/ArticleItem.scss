@@ -1,0 +1,152 @@
+.article-item {
+  background-color: #fff;
+  width: 320px;
+  height: 250px;
+  border-radius: 24px;
+  overflow: hidden;
+  /* Add this line to make items display inline */
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  
+  
+
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  h4 {
+    color: dodgerblue;
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    margin: 10px 20px 3px 20px;
+    pointer-events: none;
+    font-weight: bold;
+
+  }
+
+  h3 {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    /* Use font-weight property instead of font property */
+    margin: 0px 20px 31px 20px;
+    pointer-events: none;
+    height: 30px;
+  }
+
+  p {
+    color: #777;
+    font-size: 12px;
+    margin: 0 20px 10px 20px;
+    // pointer-events: none;
+    font-family: 'Inter', sans-serif;
+  }
+
+  img {
+    width: 100%;
+    pointer-events: none;
+    height: 130px;
+    object-fit: cover;
+  }
+
+  .favorite {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    width: 30px;
+
+    svg {
+      stroke: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      svg {
+        fill: yellow;
+      }
+
+    }
+  }
+
+  .remove {
+    position: absolute;
+    top: 10px;
+    right: 10px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+
+    svg {
+      stroke: #000;
+      fill: none;
+      width: 32px;
+    }
+
+    &:hover {
+      fill: #BB1E1E;
+
+      border: none;
+      cursor: pointer;
+
+      svg {
+        fill: #BB1E1E;
+      }
+
+    }
+
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .article-item{
+    padding-left: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 343px;
+    height: 260px;
+    img {
+      width: 100%;
+      pointer-events: none;
+      height: 168px;
+      object-fit: cover;
+    }
+
+    .remove {
+      position: absolute;
+      top: 10px;
+      right: 10px;    
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+  
+      svg {
+        stroke: #000;
+        fill: none;
+        width: 36px;
+      }}
+      .favorite {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        width: 36px;
+    
+        svg {
+          stroke: none;
+        }}
+  }
+
+}

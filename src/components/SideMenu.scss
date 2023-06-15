@@ -1,0 +1,47 @@
+.container {
+  width: 63px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px 0px 0px;
+  padding-left: 0px;
+
+
+  .button {
+    width: 63px;
+    height: 63px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0 5px 0 !important;
+    cursor: pointer;
+    border-radius: 10%;
+    color: #1D1D1B;
+    opacity: 50%;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+
+    svg {
+      width: 30px !important;
+      height: 30px !important;
+    }
+
+    &:hover {
+      background-color: white;
+      color: #BB1E1E;
+      fill: #BB1E1E;
+      stroke: #BB1E1E;
+      opacity: 100%;
+    }
+  }
+
+  .active {
+    background-color: white;
+    color: #BB1E1E;
+    opacity: 100%;
+  }
+}
